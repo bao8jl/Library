@@ -439,6 +439,10 @@ function Library:Window(Name)
 			PlaceholderColor3 = MutedColor,
 			PlaceholderText = "...",
 			ClearTextOnFocus = false,
+			ClipsDescendants = true,
+			MultiLine = false,
+			TextWrapped = false,
+			TextXAlignment = Enum.TextXAlignment.Left,
 			ZIndex = ZIndex + 2,
 			Parent = Window,
 		})
@@ -446,12 +450,12 @@ function Library:Window(Name)
 		Create("TextLabel", {
 			Name = "BoxDescription",
 			BackgroundTransparency = 1,
-			Position = UDim2.fromOffset(-85, 0),
+			Position = TextBox.Position - UDim2.fromOffset(85, 0),
 			Size = UDim2.fromOffset(75, 26),
 			Text = Text or "Box",
 			TextXAlignment = Enum.TextXAlignment.Left,
 			ZIndex = ZIndex + 2,
-			Parent = TextBox,
+			Parent = Window,
 		})
 
 		if not Callback then return end
